@@ -6,6 +6,7 @@
   <div class="col-sm-9">
 
 <div id="accordion">
+{%if properties is not empty %}
   {% for i in properties %}
   <div class="card">
     <div class="card-header {% if i.isFeatured %}bg-primary text-white {%endif%}" id="headingOne">
@@ -31,6 +32,11 @@
     </div>
   </div>
   {% endfor %}
+{% else %}
+<div class="alert alert-info" role="alert">
+  No properties found.
+</div>
+{% endif %}
 </div>
 
   </div>
