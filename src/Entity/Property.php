@@ -1,6 +1,4 @@
-<?php
-
-
+<?php namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -48,6 +46,59 @@ class Property
      * @ORM\Column(name="lowestPricePerNight", type="float", precision=10, scale=0, nullable=true)
      */
     private $lowestpricepernight;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getIsfeatured(): ?bool
+    {
+        return $this->isfeatured;
+    }
+
+    public function setIsfeatured(?bool $isfeatured): self
+    {
+        $this->isfeatured = $isfeatured;
+
+        return $this;
+    }
+
+    public function getLocation(): ?int
+    {
+        return $this->location;
+    }
+
+    public function setLocation(?int $location): self
+    {
+        $this->location = $location;
+
+        return $this;
+    }
+
+    public function getLowestpricepernight(): ?float
+    {
+        return $this->lowestpricepernight;
+    }
+
+    public function setLowestpricepernight(?float $lowestpricepernight): self
+    {
+        $this->lowestpricepernight = $lowestpricepernight;
+
+        return $this;
+    }
 
 
 }

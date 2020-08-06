@@ -1,6 +1,4 @@
-<?php
-
-
+<?php namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -37,6 +35,42 @@ class OverallRating
      * })
      */
     private $id;
+
+    public function getOverall(): ?float
+    {
+        return $this->overall;
+    }
+
+    public function setOverall(?float $overall): self
+    {
+        $this->overall = $overall;
+
+        return $this;
+    }
+
+    public function getNumberofratings(): ?int
+    {
+        return $this->numberofratings;
+    }
+
+    public function setNumberofratings(?int $numberofratings): self
+    {
+        $this->numberofratings = $numberofratings;
+
+        return $this;
+    }
+
+    public function getId(): ?Property
+    {
+        return $this->id;
+    }
+
+    public function setId(?Property $id): self
+    {
+        $this->id = $id;
+
+        return $this;
+    }
 
 
 }

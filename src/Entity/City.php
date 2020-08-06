@@ -1,6 +1,4 @@
-<?php
-
-
+<?php namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -41,6 +39,47 @@ class City
      * @ORM\Column(name="country", type="string", length=250, nullable=true)
      */
     private $country;
+
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(?string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function getIdCountry(): ?int
+    {
+        return $this->idCountry;
+    }
+
+    public function setIdCountry(?int $idCountry): self
+    {
+        $this->idCountry = $idCountry;
+
+        return $this;
+    }
+
+    public function getCountry(): ?string
+    {
+        return $this->country;
+    }
+
+    public function setCountry(?string $country): self
+    {
+        $this->country = $country;
+
+        return $this;
+    }
 
 
 }
