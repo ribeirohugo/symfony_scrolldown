@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+<div class="row">
+
+  <div class="col-sm-9">
+
+<div id="accordion">
+  {% for i in properties %}
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{ i.id }}" aria-expanded="true" aria-controls="collapse{{ i.id }}">
+          #{{ i.id }} - {{ i.name }}
+        </button>
+      </h5>
+    </div>
+    <div id="collapse{{ i.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        {{ i.overview }}
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+  </div>
+
+  <div class="col-sm-3">
+	{{ dump(content) }}
+  </div>
+
+</div>
+
+
+{% endblock %}
