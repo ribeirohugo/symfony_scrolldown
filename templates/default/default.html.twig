@@ -17,6 +17,14 @@
     </div>
     <div id="collapse{{ i.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
+		<div class="d-flex">
+			<div class="text-left">Price: € {{ venToEur(i.lowestPricePerNight.value) }}</div>
+			<div class="ml-auto">
+			{% if i.overallRating is not null %}
+				Ratings: {{ i.overallRating.overall }}
+			{% endif %}
+			</div>
+		</div>
         {{ i.overview }}
       </div>
     </div>
