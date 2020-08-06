@@ -100,5 +100,22 @@ class Property
         return $this;
     }
 
+	/** @see \Serializable::serialize() */
+    public function serialize()
+    {
+        return serialize(array(
+            $this->id,
+            $this->name
+        ));
+    }
+
+    /** @see \Serializable::unserialize() */
+    public function unserialize($serialized)
+    {
+        list (
+            $this->id,
+            $this->name
+        ) = unserialize($serialized, array('allowed_classes' => false));
+    }
 
 }
